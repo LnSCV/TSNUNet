@@ -53,7 +53,7 @@ Test:
     Dataset:
         type: "RGB_Dataset"
         root: "/home/datasets/SOD/"
-        sets:  ['SOD','DUTS-TE', 'DUT-OMRON', 'ECSSD', 'HKU-IS', 'PASCAL-S',]#DAVIS-S', 'HRSOD-TE', 'UHRSD-TE']   #
+        sets:  ['SOD','DUTS-TE', 'DUT-OMRON', 'ECSSD', 'HKU-IS', 'PASCAL-S',]
         transforms:
             dynamic_resize:
                 L: 1280
@@ -68,9 +68,3 @@ Test:
     Checkpoint:
         checkpoint_dir: "snapshots/TSNUNet_SwinB"
 
-Eval:
-    gt_root: "data/Test_Dataset"
-    pred_root: "snapshots/TSNUNet_SwinB"
-    result_path: "results"
-    datasets: ['DUTS-TE', 'DUT-OMRON', 'ECSSD', 'HKU-IS', 'PASCAL-S']
-    metrics: ['Sm', 'mae', 'adpEm', 'maxEm', 'avgEm', 'adpFm', 'maxFm', 'avgFm', 'wFm', 'mBA']
